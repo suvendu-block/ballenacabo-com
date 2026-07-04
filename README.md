@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ballena — Fine Dining Restaurant
+
+> A premium frontend clone of [Ballena](https://ballenacabo.com/), a fine dining restaurant in San José del Cabo, Los Cabos.
+
+🔗 **Live Site:** [https://ballenacabo-com.vercel.app/](https://ballenacabo-com.vercel.app/)
+
+---
+
+## About
+
+Ballena is shaped by the sea and grounded in land. This project is a pixel-perfect frontend recreation capturing the restaurant's elegant visual identity, editorial typography, and cinematic media experience.
+
+## Pages
+
+| Page | Route | Description |
+|------|-------|-------------|
+| **Home** | `/` | Hero, split content, gallery, slider, and contact |
+| **About** | `/about` | Story, approach, and values |
+| **Events** | `/events` | Private dinners, gatherings, and celebrations |
+| **Menu** | `/menu` | Dinner, drinks, and dessert sections |
+| **Gallery** | `/gallery` | Photo grid with filter categories |
+| **Location** | `/location` | Hours, contact, and map |
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS 4
+- **Animations:** GSAP + ScrollTrigger
+- **Smooth Scroll:** Lenis
+- **Icons:** Lucide React
+
+## Design System
+
+- **Typography:** Ballthens (display serif) + Milker (label serif) + Georgia (body)
+- **Color Palette:** Warm beige, deep navy, terra cotta accent, sage green, soft blue
+- **Animations:** Clip-path text reveals, curtain image reveals, staggered card fades
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+ballenacabo-com/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage
+│   ├── about/page.tsx
+│   ├── events/page.tsx
+│   ├── gallery/page.tsx
+│   ├── location/page.tsx
+│   ├── menu/page.tsx
+│   ├── layout.tsx          # Root layout
+│   └── globals.css         # Global styles & design tokens
+├── components/             # Reusable UI components
+│   ├── Header.tsx          # Navbar & menu overlay
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── SplitContent.tsx
+│   ├── ContentIntro.tsx
+│   ├── MediaIntro.tsx
+│   ├── FullImage.tsx
+│   ├── SliderSection.tsx
+│   ├── CardContent.tsx
+│   ├── PageHero.tsx
+│   ├── ScrollReveal.tsx    # Clip-path reveal wrapper
+│   ├── StaggerReveal.tsx   # Staggered reveal wrapper
+│   └── SmoothScroll.tsx    # Lenis provider
+├── public/                 # Static assets (images, videos, fonts)
+└── design-reference/       # Extracted design tokens & specs
+```
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is a frontend design exercise. All design credit belongs to [Ballena](https://ballenacabo.com/) and [Grupo Hunan](https://www.grupohunan.com/).
