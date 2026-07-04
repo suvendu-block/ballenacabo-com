@@ -1,65 +1,89 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import SplitContent from "@/components/SplitContent";
+import FullImage from "@/components/FullImage";
+import ContentIntro from "@/components/ContentIntro";
+import SliderSection from "@/components/SliderSection";
+import MediaIntro from "@/components/MediaIntro";
+import CardContent from "@/components/CardContent";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      {/* 1. Hero */}
+      <Hero />
+
+      {/* 2. Sea and Desert */}
+      <SplitContent
+        eyebrow="SEA AND DESERT"
+        title="Ballena, where gathering comes naturally"
+        description="Guided by time, light, and movement. An international kitchen rooted in territory, led by warmth, and made to be shared."
+        buttonText="explore more"
+        buttonHref="/ballena/gallery"
+        imageSrc="/img/reference/hero-image.jpg"
+        imageAlt="Ballena Cabo sea and desert"
+        hasGallery
+      />
+
+      {/* 3. Flavors / Menu */}
+      <SplitContent
+        eyebrow="Menu"
+        title="Flavors that hold the moment"
+        description="The desert is not empty, it is pure life. It is the silence screaming, it is resistance made beautiful. It is an ecosystem where every leaf, every root, is an act of pure determination."
+        buttonText="View Full Menu"
+        buttonHref="/menu"
+        imageSrc="/img/reference/menu.jpg"
+        imageAlt="Ballena Cabo menu"
+        reversed
+        themeAccent
+      />
+
+      {/* 4. Full-width Image */}
+      <FullImage
+        src="/img/reference/gallery.jpg"
+        alt="Ballena Cabo atmosphere"
+        eyebrow="The Space"
+        title="Light, texture, and calm in every frame"
+      />
+
+      {/* 5. Nature Retreat */}
+      <ContentIntro
+        eyebrow="NATURE RETREAT"
+        title="Where the kitchen moves with the landscape. Discover our restaurant in nature"
+        description="Around the table, Ballena comes to life. Good company, shared plates, and moments that linger."
+        buttonText="EXPLORE GALLERY"
+        buttonHref="/ballena/gallery"
+      />
+
+      {/* 6. Slider / Carousel */}
+      <SliderSection />
+
+      {/* 7. About */}
+      <MediaIntro
+        eyebrow="About"
+        title="Hospitality that feels natural"
+        description="Ballena is part of Grupo Hunan. A restaurant group focused on thoughtful dining, where each place responds to its context and the way people come together."
+        buttonText="About Grupo Hunan"
+        buttonHref="/ballena/about"
+        imageSrc="/img/reference/about.jpg"
+        imageAlt="Ballena Cabo about"
+      />
+
+      {/* 8. Contact / Location */}
+      <CardContent
+        eyebrow="CONTACT AND LOCATION"
+        title="A meeting point, naturally"
+        description={[]}
+        hours={[
+          { label: "HOURS", time: "5:00 PM – 11:00 PM" },
+          { label: "WEEKENDS", time: "12:00 PM – 4:00 PM" },
+        ]}
+        phone="+52 624 105 6635"
+        address={[
+          "Camino Cabo Este, San José",
+          "Del Cabo 23403 Mexico",
+        ]}
+        videoSrc="/video/reference/contact-video.mp4"
+      />
+    </>
   );
 }
